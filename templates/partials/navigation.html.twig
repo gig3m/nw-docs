@@ -1,0 +1,45 @@
+{% macro loop(page) %}
+    {% for p in page.children.visible %}
+        {% set is_active = (p.active) ? 'active' : '' %}
+        {% set is_shown = (p.active or p.activeChild) ? 'show' : 'collapse' %}
+        {% if p.children.visible.count > 0 %}
+            <li class="nav-item">
+                <a class="nav-link {{ is_active }}" data-toggle="collapse" href="#{{p.slug}}">
+                    {{ p.menu }}
+                </a>
+                <div id="{{p.slug}}" class="flex-column pl-3 {{is_shown}}">
+                    {% for i in p.children.visible %}
+                        {% set is_active_child = (p.active or p.activeChild) ? 'active' : '' %}
+                        <a href="{{i.url}}" class="nav-link {{is_active_child}}">{{i.menu}}</a>
+                    {% endfor %}
+                </div>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link {{ is_active }}" href="{{ p.url }}">
+                    {{ p.menu }}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+
+<ul class="nav flex-column nav-pills" id="accordian">
+
+    {{ _self.loop(pages) }}
+
+</ul>
+
+{# Example #}
+
+{# <ul class="nav flex-column nav-pills" id="accordian">
+  <li class="nav-item">
+    <a class="nav-link collapse" data-toggle="collapse" data-parent="accordian" href="#target">Link</a>
+    <div id="target" class="flex-column pl-2 collapse">
+        <a href="#" class="nav-link">One</a>
+        <a href="#" class="nav-link">Two</a>
+        <a href="#" class="nav-link">Three</a>
+    </div>
+  </li>
+</ul> #}

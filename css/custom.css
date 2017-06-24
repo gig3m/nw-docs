@@ -1,0 +1,37 @@
+body {
+  padding-top: 2rem;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+    color: #7a38ff;
+}
+
+.nav-pills .nav-link.active {
+    color: #fff;
+    background-color: #7a38ff;
+}
+
+
+/* Custom Stuff */
+
+span.uncommon {
+    color: #84dc26;
+}
+
+span.rare {
+    color: #3391e9;
+}
+
+span.epic {
+    color: #7a38ff;
+}
+
+span.legendary {
+    color: #f27900;
+}
+
+span.mythic {
+    color: #30eeb4;
+}
+
