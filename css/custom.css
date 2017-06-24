@@ -11,6 +11,10 @@ body {
 
 /* Custom Stuff */
 
+span.common {
+    color: #aaa;
+}
+
 span.uncommon {
     color: #84dc26;
 }
