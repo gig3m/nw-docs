@@ -3,10 +3,6 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-a {
-    color: #7a38ff;
-}
-
 .nav-pills .nav-link.active {
     color: #fff;
     background-color: #7a38ff;
