@@ -9,7 +9,7 @@
                 </a>
                 <div id="{{p.slug}}" class="flex-column pl-3 {{is_shown}}">
                     {% for i in p.children.visible %}
-                        {% set is_active_child = (p.active or p.activeChild) ? 'active' : '' %}
+                        {% set is_active_child = (i.active or i.activeChild) ? 'active' : '' %}
                         <a href="{{i.url}}" class="nav-link {{is_active_child}}">{{i.menu}}</a>
                     {% endfor %}
                 </div>
